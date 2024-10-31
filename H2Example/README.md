@@ -16,6 +16,7 @@ For other download options, see [GraalVM Downloads](https://www.graalvm.org/down
 ## Build on a JVM and Run (Optional)
 
 ### Maven
+
 Package and run with Maven on a JVM:
 ```bash
 ./mvnw clean package
@@ -25,6 +26,7 @@ Package and run with Maven on a JVM:
 ```
 
 ### Gradle
+
 Package and run with Gardle on a JVM:
 ```bash
 ./gradlew run
@@ -33,6 +35,7 @@ Package and run with Gardle on a JVM:
 ## Build a Native Image and Run
 
 ### Maven
+
 Compile and build a native image with Maven: 
 ```bash
 ./mvnw package -Pnative
