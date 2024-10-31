@@ -1,0 +1,24 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-csv:1.10.0'
+}
+
+application {
+    mainClass = 'com.example.csvparser.CsvParser'
+}
+
+task buildNative(type: Exec) {
+    group = 'build'
+    description = 'Builds a native executable of the application using GraalVM Native Image'
+
+    doLast {
+        commandLine 'native-image', '-cp', "$buildDir/classes/java/main:$buildDir/resources/main", application.mainClass, "$buildDir/native/csv-parser-app"
+    }
+}

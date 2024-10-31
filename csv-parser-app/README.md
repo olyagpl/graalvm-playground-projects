@@ -16,6 +16,8 @@ For other download options, see [GraalVM Downloads](https://www.graalvm.org/down
 
 ## Build on a JVM and Run (Optional)
 
+### Maven
+
 1. Compile and package with Maven:
     ```bash
     ./mvnw clean package
@@ -26,13 +28,33 @@ For other download options, see [GraalVM Downloads](https://www.graalvm.org/down
     ./mvnw exec:java -Dexec.args="countries_and_capitals.csv Canada"
     ```
 
+### Gradle
+
+Compile and run the application with Gradle:
+```bash
+./gradlew run --args="src/main/resources/countries_and_capitals.csv Canada"
+```
+
 ## Build a Native Image and Run
+
+### Maven
 
 1. Compile and build a native executable with Maven: 
     ```bash
     ./mvnw -Pnative package
     ```
-2. Query the capital for a specific country, run:
+2. Query the capital for a specific country:
     ```bash
     ./target/csv-parser countries_and_capitals.csv Canada
+    ```
+
+### Gradle
+
+1. Compile and build a native executable with Gradle:
+    ```bash
+    ./gradlew buildNative
+    ```
+2. Query the capital for a specific country:
+    ```bash
+    ./build/native/csv-parser-app countries_and_capitals.csv Canada
     ```
