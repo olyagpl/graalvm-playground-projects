@@ -1,0 +1,28 @@
+plugins {
+    id 'application'
+    id 'org.graalvm.buildtools.native' version '0.10.3'
+}
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass.set('com.example.H2Example')
+}
+
+dependencies {
+    implementation("com.h2database:h2:2.2.220")
+}
+
+graalvmNative {
+    binaries {
+        main {
+            imageName.set('h2example')
+            buildArgs.add("-Ob")
+        }
+    }
+    metadataRepository {
+        enabled = true
+    }
+}

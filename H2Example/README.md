@@ -15,6 +15,7 @@ For other download options, see [GraalVM Downloads](https://www.graalvm.org/down
 
 ## Build on a JVM and Run (Optional)
 
+### Maven
 Package and run with Maven on a JVM:
 ```bash
 ./mvnw clean package
@@ -23,8 +24,15 @@ Package and run with Maven on a JVM:
 ./mvnw exec:java
 ```
 
+### Gradle
+Package and run with Gardle on a JVM:
+```bash
+./gradlew run
+```
+
 ## Build a Native Image and Run
 
+### Maven
 Compile and build a native image with Maven: 
 ```bash
 ./mvnw package -Pnative
@@ -34,3 +42,11 @@ Run the application from the native image:
 ./target/h2example
 ```
 The application returns a list of customers stored in the H2 Database.
+
+### Gradle
+
+Compile, build a native image, and run with Gradle: 
+```
+ ./gradlew nativeRun
+```
+This generates a native executable for the platform in the _build/native/nativeCompile/_ directory, called `h2example`. The command also runs the application from that native executable.
