@@ -22,7 +22,7 @@ Package and run with Maven on a JVM:
 ./mvnw clean package
 ```
 ```bash
-./mvnw exec:java
+./mvnw compile exec:java
 ```
 
 ### Gradle
