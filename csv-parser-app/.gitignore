@@ -1,3 +1,4 @@
 /target
+/.gradle/nb-cache
 .vscode/
 .DS_Store
